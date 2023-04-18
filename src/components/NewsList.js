@@ -18,13 +18,14 @@ const NewsList = () => {
             .then(json => {
                 setNews(json.articles)
             })
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search])
-    console.log(searchInput);
+
 
     console.log(news);
     return (
         <section>
-            <h1>Breaking News</h1>
             <form action="">
                 <input type="text" name="" id="searchText" placeholder="What do you search? ;)" value={searchInput} onChange={(event) => setSearchInput(event.target.value)} />
                 <input type="button" value="Search" className="searchButton" onClick={() => setSearch(!search)} />
